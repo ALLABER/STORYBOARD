@@ -1,11 +1,11 @@
-package com.allaber.storyboard.utils.api;
+package com.allaber.storyboard.viewmodels.api;
 
 import static com.allaber.storyboard.utils.Constants.Api.BASE_URL;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Services {
+public class NetworkService {
 
     private static Retrofit.Builder retrofitBuilder =
         new Retrofit.Builder()
@@ -14,10 +14,12 @@ public class Services {
 
     private static Retrofit retrofit = retrofitBuilder.build();
 
-    private static StoriesApi storiesApi = retrofit.create(StoriesApi.class);
+    private static StoriesApi storiesApi;
 
     public StoriesApi getStoriesApi() {
-        return storiesApi;
+        return storiesApi == null ?
+                storiesApi = retrofit.create(StoriesApi.class) :
+                storiesApi;
     }
 
 }

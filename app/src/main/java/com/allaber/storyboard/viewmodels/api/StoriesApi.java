@@ -1,13 +1,13 @@
-package com.allaber.storyboard.utils.api;
+package com.allaber.storyboard.viewmodels.api;
 
 import static com.allaber.storyboard.utils.Constants.Api.STORIES;
 
-import com.allaber.storyboard.utils.api.models.Root;
+import com.allaber.storyboard.models.RootModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface StoriesApi {
     @GET(STORIES)
-    Call<Root> getStories();
+    Call<RootModel> getStories();
 }

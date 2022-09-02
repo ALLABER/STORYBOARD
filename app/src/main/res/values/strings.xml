@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Storyboard</string>
     <string name="string_no_internet_connection">Нет соединения с интернетом!</string>
-    <string name="string_error">Ошибка: </string>
+    <string name="string_error">Ошибка:\u0020</string>
 </resources>

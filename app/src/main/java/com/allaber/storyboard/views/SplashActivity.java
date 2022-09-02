@@ -1,9 +1,11 @@
-package com.allaber.storyboard;
+package com.allaber.storyboard.views;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.allaber.storyboard.views.StoryboardActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
