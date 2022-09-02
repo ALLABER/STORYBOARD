@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@color/color_light_splash_screen"/>
+        android:drawable="@color/color_dark_splash_screen"/>
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/light_splash_image"/>
+            android:src="@mipmap/dark_splash_image"/>
     </item>
 </layer-list>

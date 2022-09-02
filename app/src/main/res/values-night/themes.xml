@@ -1,16 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.STORYBOARD" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_dark_blue_grey_500</item>
+        <item name="colorOnPrimary">@color/color_dark_blue_grey_700</item>
+        <item name="colorSecondary">@color/color_dark_blue_grey_500</item>
+        <item name="colorOnSecondary">@color/color_dark_blue_grey_500</item>
+        <item name="android:statusBarColor">@color/color_dark_blue_grey_700</item>
+        <item name="android:colorBackground">@color/color_dark_background</item>
+        <item name="android:actionBarStyle">@style/ToolbarTheme</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/color_light_background</item>
+        <item name="android:textColorSecondary">@color/color_light_background</item>
+        <item name="android:background">@color/color_light_background</item>
+    </style>
+
+    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_dark_splash_screen</item>
+        <item name="colorPrimaryDark">@color/color_dark_splash_screen</item>
+        <item name="android:windowBackground">@drawable/splash_dark_screen</item>
+        <item name="android:colorBackground">@color/color_dark_splash_screen</item>
+        <item name="android:navigationBarColor">@color/color_dark_splash_screen</item>
     </style>
 </resources>
