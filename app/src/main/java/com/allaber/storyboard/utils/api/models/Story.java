@@ -1,28 +1,32 @@
 package com.allaber.storyboard.utils.api.models;
 
-import java.util.ArrayList;
+import static com.allaber.storyboard.utils.Constants.TimeUtils.PATTERN_DDMMYYYY;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class Story {
-    public ArrayList<Page> pages;
-    public String text_url;
-    public String url;
-    public int date;
-    public String description;
-    public String unique_name;
-    public String material_url;
-    public String news_name;
-    public String image_logo;
-    public int exp_date;
-    public boolean is_add;
+    private List<Page> pages;
+    private String text_url;
+    private String url;
+    private long date;
+    private String description;
+    private String unique_name;
+    private String material_url;
+    private String news_name;
+    private String image_logo;
+    private int exp_date;
+    private boolean is_add;
 
     public Story() {
     }
 
-    public ArrayList<Page> getPages() {
+    public List<Page> getPages() {
         return pages;
     }
 
-    public void setPages(ArrayList<Page> pages) {
+    public void setPages(List<Page> pages) {
         this.pages = pages;
     }
 
@@ -42,11 +46,13 @@ public class Story {
         this.url = url;
     }
 
-    public int getDate() {
-        return date;
+    public String getDate() {
+        Date newsDate = new Date(date* 1000);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(PATTERN_DDMMYYYY);
+        return simpleDateFormat.format(newsDate);
     }
 
-    public void setDate(int date) {
+    public void setDate(long date) {
         this.date = date;
     }
 

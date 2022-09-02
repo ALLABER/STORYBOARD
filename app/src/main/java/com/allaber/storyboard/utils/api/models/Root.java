@@ -1,10 +1,10 @@
 package com.allaber.storyboard.utils.api.models;
 
 public class Root {
-    public String error;
-    public int status_id;
-    public Detail detail;
-    public String status;
+    private String error;
+    private int status_id;
+    private Detail detail;
+    private String status;
 
     public Root() {
     }

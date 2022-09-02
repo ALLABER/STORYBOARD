@@ -1,11 +1,11 @@
 package com.allaber.storyboard.utils.api.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Detail {
-    public Info info;
-    public Tutorial tutorial;
-    public ArrayList<Story> stories;
+    private Info info;
+    private Tutorial tutorial;
+    private List<Story> stories;
 
     public Detail() {
     }
@@ -26,11 +26,11 @@ public class Detail {
         this.tutorial = tutorial;
     }
 
-    public ArrayList<Story> getStories() {
+    public List<Story> getStories() {
         return stories;
     }
 
-    public void setStories(ArrayList<Story> stories) {
+    public void setStories(List<Story> stories) {
         this.stories = stories;
     }
 }

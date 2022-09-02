@@ -1,16 +1,21 @@
 package com.allaber.storyboard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.allaber.storyboard.adapter.StoriesAdapter;
 import com.allaber.storyboard.utils.api.Services;
 import com.allaber.storyboard.utils.api.StoriesApi;
 import com.allaber.storyboard.utils.api.models.Root;
 import com.allaber.storyboard.utils.api.models.Story;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +37,12 @@ public class StoryboardActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
                 if(response.isSuccessful()) {
-                    ArrayList<Story> stories = response.body().getDetail().getStories();
+                    List<Story> stories = response.body().getDetail().getStories();
+                    RecyclerView rvContacts = (RecyclerView) findViewById(R.id.recyclerView);
+                    StoriesAdapter adapter = new StoriesAdapter(stories);
+                    rvContacts.setAdapter(adapter);
+                    RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 3);
+                    rvContacts.setLayoutManager(mLayoutManager);
                 } else {
                     Toast.makeText(getApplicationContext(), "Error: " + response.message(), Toast.LENGTH_SHORT).show();
                 }

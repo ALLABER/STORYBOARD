@@ -1,10 +1,10 @@
 package com.allaber.storyboard.utils.api.models;
 
 public class Page {
-    public int id;
-    public String duration;
-    public String file_type;
-    public String file_url;
+    private int id;
+    private String duration;
+    private String file_type;
+    private String file_url;
 
     public Page() {
     }

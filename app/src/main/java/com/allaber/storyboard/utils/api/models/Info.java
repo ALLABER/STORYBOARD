@@ -1,27 +1,27 @@
 package com.allaber.storyboard.utils.api.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Info {
-    public ArrayList<Page> pages;
-    public String text_url;
-    public String url;
-    public int date;
-    public String description;
-    public String unique_name;
-    public String material_url;
-    public String news_name;
-    public int exp_date;
-    public boolean is_add;
+    private List<Page> pages;
+    private String text_url;
+    private String url;
+    private int date;
+    private String description;
+    private String unique_name;
+    private String material_url;
+    private String news_name;
+    private int exp_date;
+    private boolean is_add;
 
     public Info() {
     }
 
-    public ArrayList<Page> getPages() {
+    public List<Page> getPages() {
         return pages;
     }
 
-    public void setPages(ArrayList<Page> pages) {
+    public void setPages(List<Page> pages) {
         this.pages = pages;
     }
 
