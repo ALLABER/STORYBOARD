@@ -10,7 +10,7 @@
 
         <variable
             name="storiesClickListener"
-            type="com.allaber.storyboard.viewmodels.adapter.StoriesClickListener" />
+            type="com.allaber.storyboard.adapters.StoriesClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView

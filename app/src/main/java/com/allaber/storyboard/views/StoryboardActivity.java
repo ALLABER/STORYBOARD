@@ -1,35 +1,29 @@
 package com.allaber.storyboard.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.allaber.storyboard.R;
-import com.allaber.storyboard.viewmodels.adapter.StoriesAdapter;
 import com.allaber.storyboard.databinding.ActivityStoryboardBinding;
-import com.allaber.storyboard.models.StoriesModel;
-import com.allaber.storyboard.viewmodels.api.NetworkService;
-import com.allaber.storyboard.viewmodels.api.StoriesApi;
-import com.allaber.storyboard.models.RootModel;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.allaber.storyboard.viewmodels.StoriesViewModel;
+import com.allaber.storyboard.adapters.StoriesAdapter;
 
 public class StoryboardActivity extends AppCompatActivity {
 
+    private StoriesViewModel storiesViewModel;
     private ActivityStoryboardBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_storyboard);
+        storiesViewModel = ViewModelProviders.of(this).get(StoriesViewModel.class);
         populateData();
     }
 
@@ -48,34 +42,15 @@ public class StoryboardActivity extends AppCompatActivity {
     }
 
     private void loadNetworkServiceData() {
-        NetworkService networkService = new NetworkService();
-        StoriesApi storiesApi = networkService.getStoriesApi();
-        Call<RootModel> stories = storiesApi.getStories();
-        enqueueStories(stories);
-    }
-
-    private void enqueueStories(Call<RootModel> stories) {
-        stories.enqueue(new Callback<RootModel>() {
-            @Override
-            public void onResponse(Call<RootModel> call, Response<RootModel> response) {
-                responseResultProcessing(response);
-            }
-
-            @Override
-            public void onFailure(Call<RootModel> call, Throwable throwable) {
-                showToastMessage(throwable.getMessage());
+        storiesViewModel.initialize();
+        storiesViewModel.getRootModelResponseLiveData().observe(this, rootModel -> {
+            if (rootModel != null) {
+                StoriesAdapter adapter = new StoriesAdapter(rootModel.getDetail().getStories(), getApplicationContext());
+                binding.setStoriesAdapter(adapter);
+            } else {
+                showToastMessage(getString(R.string.string_try_get_data));
             }
         });
-    }
-
-    private void responseResultProcessing(Response<RootModel> response) {
-        if(response.isSuccessful()) {
-            List<StoriesModel> stories = response.body().getDetail().getStories();
-            StoriesAdapter adapter = new StoriesAdapter(stories, getApplicationContext());
-            binding.setStoriesAdapter(adapter);
-        } else {
-            showToastMessage(response.message());
-        }
     }
 
     private void showToastMessage(String message) {

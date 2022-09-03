@@ -1,4 +1,4 @@
-package com.allaber.storyboard.viewmodels.adapter;
+package com.allaber.storyboard.adapters;
 
 import com.allaber.storyboard.models.StoriesModel;
 

@@ -1,6 +1,8 @@
-package com.allaber.storyboard.viewmodels.api;
+package com.allaber.storyboard.services;
 
 import static com.allaber.storyboard.utils.Constants.Api.BASE_URL;
+
+import com.allaber.storyboard.apis.StoriesApi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

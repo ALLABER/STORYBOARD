@@ -1,4 +1,4 @@
-package com.allaber.storyboard.views;
+package com.allaber.storyboard;
 
 import android.content.Intent;
 import android.os.Bundle;

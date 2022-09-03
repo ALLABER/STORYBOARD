@@ -1,4 +1,4 @@
-package com.allaber.storyboard.viewmodels.api;
+package com.allaber.storyboard.apis;
 
 import static com.allaber.storyboard.utils.Constants.Api.STORIES;
 

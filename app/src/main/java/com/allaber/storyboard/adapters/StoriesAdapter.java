@@ -1,4 +1,4 @@
-package com.allaber.storyboard.viewmodels.adapter;
+package com.allaber.storyboard.adapters;
 
 import android.content.Context;
 import android.content.Intent;

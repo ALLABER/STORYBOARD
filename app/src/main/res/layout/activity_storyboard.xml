@@ -5,7 +5,7 @@
     <data>
         <variable
             name="storiesAdapter"
-            type="com.allaber.storyboard.viewmodels.adapter.StoriesAdapter" />
+            type="com.allaber.storyboard.adapters.StoriesAdapter" />
     </data>
 
 
