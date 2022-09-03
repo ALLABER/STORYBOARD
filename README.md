@@ -7,3 +7,13 @@
 > * Заголовок новости
 > * Дату добавления новости в формате ДД МММ ГГГГ
 > * По нажатию на элемент должен открываться браузер с адресом из поля "url"
+
+## Использованные зависимости:
+> * Retrofit - Реализация rest api
+> * Picasso - Загрузка фотографий с url
+> * Lifecycle - Databinding - связи модели данных с view, LiveData - реализация подписка на данные
+
+## [Скачать APK](https://github.com/ALLABER/STORAGE/raw/main/Storyboard.apk "Нажми чтобы скачать")
+
+## Скриншоты:
+![Alt text](https://github.com/ALLABER/STORAGE/blob/main/STORYBOARD.gif?raw=true "Optional Title")
