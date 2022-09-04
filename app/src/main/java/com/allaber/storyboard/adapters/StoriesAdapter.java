@@ -66,7 +66,6 @@ public class StoriesAdapter extends RecyclerView.Adapter< StoriesAdapter.ViewHol
     @Override
     public void cardClicked(StoriesModel storiesModel) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(storiesModel.getStoriesLink()));
-        browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(browserIntent);
     }
 }

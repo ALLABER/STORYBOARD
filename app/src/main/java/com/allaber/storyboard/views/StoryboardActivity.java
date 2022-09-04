@@ -42,10 +42,9 @@ public class StoryboardActivity extends AppCompatActivity {
     }
 
     private void loadNetworkServiceData() {
-        storiesViewModel.initialize();
         storiesViewModel.getRootModelResponseLiveData().observe(this, rootModel -> {
             if (rootModel != null) {
-                StoriesAdapter adapter = new StoriesAdapter(rootModel.getDetail().getStories(), getApplicationContext());
+                StoriesAdapter adapter = new StoriesAdapter(rootModel.getDetail().getStories(), this);
                 binding.setStoriesAdapter(adapter);
             } else {
                 showToastMessage(getString(R.string.string_try_get_data));
